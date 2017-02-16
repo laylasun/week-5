@@ -21,3 +21,90 @@ body {
     overflow-y: auto;
     padding: 20px;
 }
+
+#main-heading{
+  margin-top: auto;
+  margin-bottom:20px;
+  font-size: 30px;
+  font-family: Curlz MT;
+}
+#hint-text{
+  font-family: Menlp;
+  font-size: 13px;
+  font-weight: lighter;
+  margin-bottom: 20px;
+  line-height: 1.4em;
+}
+#referred-labels{
+  border: 1px solid #eeeeee;
+  background-color: #eeeeee;
+  font-family: Papyrus;
+  font-weight: bold;
+  font-size: 14px;
+}
+.labels {
+  font-size: 15px;
+  font-family: Papyrus;
+  font-weight: bold;
+}
+.text-input{
+  margin-top:10px;
+  width: 75%;
+  font-size:12px;
+  font-family: Papyrus;
+  font-weight:500;
+  color: #79d3ff;
+  border: 1px solid #92DBFF;
+}
+:placeholder-shown {
+  border-color: lightgrey;
+}
+
+#go-button{
+  position: absolute;
+  margin-top: 10px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50px;
+  font-size: 13px;
+  font-family: Papyrus;
+  font-weight: bold;
+}
+
+.dataset-info {
+  position: relative;
+  top: 10%;
+  font-family: Papyrus;
+}
+.dataset-info h3{
+  margin-top: 17px;
+  margin-bottom: 17px;
+  font-size: 17px;
+}
+hr{
+  width: 280px;
+}
+.info-subset{
+  border: 1px solid #eeeeee;
+  background-color: #eeeeee;
+  height: auto;
+  width: 280px;
+  font-size: 13px;
+}
+.info-subset p {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-weight: bold;
+}
+#subdata-title{
+  font-weight: bold;
+  font-size: 14px;
+}
+.datainfo{
+  font-family: Menlo;
+  font-weight: 300;
+  color: #3fa3d4;
+}
+#blockMargin{
+  height: 18px;
+}

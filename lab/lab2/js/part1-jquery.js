@@ -168,6 +168,96 @@ var Stamen_TonerLite = L.tileLayer('http://stamen-tiles-{s}.a.ssl.fastly.net/ton
 // This is a popular pattern that you'll run into in programs that run jQuery. It says not to run
 // the function passed to `ready` until the HTML document is fully loaded and all scripts have
 // been interpreted. It is, therefore, an example of asynchronous behavior.
+var textField1,textField2,textField3,numericField1,
+    checkbox1,checkbox2,colorField,latField,lngField,descriptionField;
+
 $(document).ready(function() {
   // Do your stuff here
+  //Task 1:
+   $('#text-label1').text("Title");
+   $('#text-label2').text("Name");
+   $('#text-label3').text("Address");
+   $('#number-label').text("Age");
+   $('#checkbox-label1').text("College student?");
+   $('#checkbox-label2').text("Covered by health insurance?");
+   $('#color-label').text("Iris Color");
+
+ /*//Task 2:
+   $('#text-input1').val('Ms.');
+   $('#text-input2').val('Layla');
+   $('#text-input3').val('1111 Mimi Street');
+   $('#numeric-input').val('1000');
+   $('#cbox-input1').val('checked');
+   $('#cbox-input2').val('checked');
+   $('#color-input').val('#rrggbb');
+ //Task 3:
+   var input ={};
+   input[$('#text-label1').text()] = $('#text-input1').val();
+   input[$('#text-label2').text()] = $('#text-input2').val();
+   input[$('#text-label3').text()] = $('#text-input3').val();
+   input[$('#number-label').text()] = $('#numeric-input').val();
+   input[$('#checkbox-label1').text()] = $('#cbox-input1').val();
+   input[$('#checkbox-label2').text()] = $('#cbox-input2').val();
+   input[$('#color-label').text()] = $('#color-input').val(); */
+
+//Task 4:
+   $('.input-text').prop('disabled',false);
+   $('#numeric-input').prop('disabled',false);
+   $('#cbox-input1').prop('disabled',false);
+   $('#cbox-input2').prop('disabled',false);
+   $('#color-input').prop('disabled',false);
+
+//Task 5:
+   $('button').click(function(e){
+     textField1 = $('#text-input1').val();
+     console.log('textField1:',textField1);
+     textField2 = $('#text-input2').val();
+     console.log('textField2:',textField2);
+     textField3 = $('#text-input3').val();
+     console.log('textField3:',textField3);
+     numericField1= $('#numeric-input').val();
+     console.log('numericField1:',numericField1);
+
+     //To see whether the checkbox is checked or not:
+     checkbox1 = $('#cbox-input1').is(':checked');
+     console.log('checkbox1:', checkbox1);
+     checkbox2 = $('#cbox-input2').is(':checked');
+     console.log('checkbox2:', checkbox2);
+
+     //From Task 6
+     latField = $('#lat-input').val();
+     console.log('Latitude:', latField);
+     lngField = $('#lng-input').val();
+     console.log('Longitude:',lngField);
+     descriptionField = $('#message-input').val();
+     console.log('description:', descriptionField);
+
+     colorField = $('#color-input').val();
+     console.log('colorField:', colorField);
+
+     var circleMarker = L.circleMarker([latField,lngField])
+     .setRadius(numericField1)
+     .setStyle({
+       color: colorField,
+       weight: 2,
+       fillColor: colorField,
+       fillOpacity: 0.5
+     });
+
+     circleMarker.bindPopup(descriptionField).addTo(map);
+
+   });
+
+   //Task 6:
+   //Add lat, lng and description into html using jQuery $().before()
+   var lat_label = '<lable id="lat-label" for="lat-input">Latitude </label>';
+   var lat_input = '<input type=number, id="lat-input", placeholder="input Lat", value="39.9522">';
+   var br = '<br><br>';
+   $('#color-label').before(lat_label,lat_input,br);
+   var lng_label = '<lable id="lng-label" for="lng-input">Longitude </label>';
+   var lng_input = '<input type=number, id="lng-input", placeholder="input lng", value="-75.1639">';
+   $('#color-label').before(lng_label, lng_input,br);
+   var message_label = '<lable id="message-label" for="message-input">Describe the circle </label>';
+   var message_input = '<input type=text, id="message-input", placeholder="input your description", value="The radius reflects my age!">';
+   $('#color-label').before(message_label, message_input,br);
 });

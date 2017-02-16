@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/leaflet.css" />
     <link rel="stylesheet" href="css/style.css" />
+    <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
   </head>
   <body>
     <!-- Sidebar -->
@@ -12,6 +13,64 @@
       <!-- =====================
       Add elements in this space
       ====================== -->
+      <h2 id="main-heading">Philly GeoDatasets Explorer</h2>
+      <p id="hint-text">
+        <i class="em em-information_desk_person"></i>
+        Hint: Please copy and paste the dataset
+        <span id="referred-labels">Url:</span> ,
+        <span id="referred-labels">Lat Key:</span> and
+        <span id="referred-labels">Lng Key:</span>
+        info from the datasets provided in section
+        "Three Datasets about Philla". Please make sure no space in front of your input.</p>
+      <label id="text-label1" class="labels" for="url-input1">URL of Your Dataset</label>
+      <br>
+      <input id="url-input1" class="text-input" type="text" placeholder="Choose a URL listed below...">
+      <br>
+      <br>
+      <label id="text-label2" class="labels" for="lat-key-input">Latitude Key </label>
+      <br>
+      <input id="lat-key-input" class="text-input" type="text" placeholder="Find the corresponding Lat key...">
+      <br>
+      <br>
+      <label id="text-label3" class="labels" for="lng-key-input">Longitude Key </label>
+      <br>
+      <input id="lng-key-input" class="text-input" type="text" placeholder="Find the corresponding Lng key...">
+      <br>
+      <br>
+      <button id="go-button">Go</button>
+      <br>
+
+    <div class="dataset-info">
+      <hr>
+      <h3>Three Datasets about Philla</h3>
+      <div class="info-subset">
+        <p><span>Philadelphia Bike Crashes</span>
+          <br>Url: <span class="datainfo"> https://raw.githubusercontent.com/CPLN692-MUSA611/datasets/master/json/philadelphia-bike-crashes-snippet.json</span>
+          <br>Lat key: <span class="datainfo">LAT</span>
+          <br>Lng key: <span class="datainfo">LNG</span>
+      </p>
+      </div>
+      <div id="blockMargin"><br></div>
+
+      <div class="info-subset">
+        <p><span id="subdata-title">Philadelphia Solar Installations</span>
+          <br>Url: <span class="datainfo"> https://raw.githubusercontent.com/CPLN692-MUSA611/datasets/master/json/philadelphia-solar-installations.json </span>
+          <br>Lat key: <span class="datainfo">Y</span>
+          <br>Lng key: <span class="datainfo"> X</span>
+      </p>
+      </div>
+      <div id="blockMargin"><br></div>
+
+      <div class="info-subset">
+        <p><span>Philadelphia Crime Incidents</span>
+          <br>Url: <span class="datainfo"> https://raw.githubusercontent.com/CPLN692-MUSA611/datasets/master/json/philadelphia-crime-snippet.json</span>
+          <br>Lat key: <span class="datainfo">Lat</span>
+          <br>Lng key: <span class="datainfo">Lng</span>
+      </p>
+      </div>
+      <div id="blockMargin"><br></div>
+    </div>
+
     </div>
     <!-- Map -->
     <div id="map" class="map"></div>
